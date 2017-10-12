@@ -4,12 +4,14 @@ import HomeIcon from './icons/home.png';
 import SettingsIcon from './icons/settings.png';
 import HomeTab from './HomeTab';
 import SettingsTab from './SettingsTab';
+import Login from './Login';
 
-export default function startApp() {
-  Navigation.registerComponent('screen.welcome', () => Welcome);
-  Navigation.registerComponent('screen.homeTab', () => HomeTab);
-  Navigation.registerComponent('screen.settingsTab', () => SettingsTab);
+Navigation.registerComponent('screen.login', () => Login);
+Navigation.registerComponent('screen.welcome', () => Welcome);
+Navigation.registerComponent('screen.homeTab', () => HomeTab);
+Navigation.registerComponent('screen.settingsTab', () => SettingsTab);
 
+export function startTabbedApp() {
   Navigation.startTabBasedApp({
     tabs: [
       {
@@ -26,5 +28,14 @@ export default function startApp() {
       }
     ],
     animationType: 'fade'
+  });
+}
+
+export default function startApp() {
+  Navigation.startSingleScreenApp({
+    screen: {
+      title: 'DevCamp Navigation',
+      screen: 'screen.login'
+    }
   });
 }

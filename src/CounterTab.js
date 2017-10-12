@@ -23,6 +23,10 @@ export default class CounterTab extends Component {
     this.props.navigator.setTitle({
       title: `Counter: ${nextState.counter}`
     });
+    this.props.navigator.setTabBadge({
+      tabIndex: 1,
+      badge: nextState.counter === 0 ? null : nextState.counter
+    });
   }
 
   decrement = () => {

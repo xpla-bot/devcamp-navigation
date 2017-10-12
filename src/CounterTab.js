@@ -14,6 +14,8 @@ export default class CounterTab extends Component {
       if (event.id === 'decrement') {
         this.decrement();
       }
+    } else if (event.id === 'willAppear') {
+      this.clear();
     }
   };
 
@@ -31,6 +33,10 @@ export default class CounterTab extends Component {
   increment = () => {
     const counter = this.state.counter;
     this.setState({ counter: counter + 1 });
+  };
+
+  clear = () => {
+    this.setState({ counter: 0 });
   };
 
   render() {

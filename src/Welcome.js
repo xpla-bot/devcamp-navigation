@@ -7,7 +7,7 @@ export default class Welcome extends Component {
     return (
       <View style={styles.container}>
         <Text>
-          Hello DevCamp!
+          Hello {this.props.name}!
         </Text>
       </View>
     );

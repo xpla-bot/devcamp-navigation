@@ -27,7 +27,15 @@ export function startTabbedApp() {
         label: 'Counter',
         icon: AddIcon,
         title: 'Counter',
-        screen: 'screen.counterTab'
+        screen: 'screen.counterTab',
+        navigatorButtons: {
+          rightButtons: [
+            {
+              title: 'Decrement',
+              id: 'decrement'
+            }
+          ]
+        }
       },
       {
         label: 'Settings',
